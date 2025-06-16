@@ -6,8 +6,7 @@ use App\Http\Controllers\ChatController;
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/chat', [ChatController::class, 'index'])->name('chat');
-    // Route::get('/messages', [ChatController::class, 'fetchMessages']);
+    Route::get('/chat', \App\Livewire\ChatComponent::class)->name('chat');
     Route::post('/messages', [ChatController::class, 'sendMessage']);
 });
 
