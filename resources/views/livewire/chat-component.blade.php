@@ -1,6 +1,6 @@
 <div class="container mx-auto flex h-screen">
     <!-- Sidebar: Conversation List -->
-    <div class="w-1/3 bg-gray-100 border-r border-gray-200 overflow-y-auto">
+    <div class="w-1/3 bg-black text-white border-r border-gray-200 overflow-y-auto">
         <div class="p-4 border-b">
             <h2 class="text-lg font-semibold">Chats</h2>
         </div>
@@ -8,7 +8,7 @@
             @if (!empty($conversations) && count($conversations) > 0)
                 @foreach ($conversations as $conversation)
                     <div wire:click="updateReceiver({{ $conversation['id'] }})"
-                        class="p-4 hover:bg-gray-200 cursor-pointer flex items-center {{ $receiver_id == $conversation['id'] ? 'bg-gray-200' : '' }}">
+                        class="p-4 hover:bg-gray-200 hover:text-black cursor-pointer flex items-center {{ $receiver_id == $conversation['id'] ? 'bg-gray-200' : '' }}">
                         <div class="flex-1">
                             <p class="font-medium">{{ $conversation['name'] }}</p>
                             <p class="text-sm text-gray-600 truncate">{{ $conversation['last_message'] }}</p>
@@ -19,7 +19,7 @@
             @else
                 @foreach ($users as $user)
                     <div wire:click="updateReceiver({{ $user->id }})"
-                        class="p-4 hover:bg-gray-200 cursor-pointer flex items-center {{ $receiver_id == $user->id ? 'bg-gray-200' : '' }}">
+                        class="p-4 hover:bg-gray-200 hover:text-black cursor-pointer flex items-center {{ $receiver_id == $user->id ? 'bg-gray-200' : '' }}">
                         <div class="flex-1">
                             <p class="font-medium">{{ $user->name }}</p>
                             <p class="text-sm text-gray-600 truncate">No messages yet.</p>
